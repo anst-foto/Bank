@@ -1,12 +1,13 @@
 ﻿#pragma once
 
 #include <map>
+#include <stdexcept>
 
-#include "Account.h"
+#include "IAccount.h"
 
 using namespace std;
 
-using AccountList = map<int, BaseAccount>;
+using AccountList = map<int, IAccount*>;
 
 class Bank
 {
@@ -16,23 +17,23 @@ private:
 public:
     Bank() = default;
 
-    void add(const BaseAccount& account)
+    void add(IAccount* account)
     {
-        const auto number = account.getNumber();
+        const auto number = account->getNumber();
         _accounts[number] = account;
     }
 
-    void remove(int number)
+    void remove(const int number)
     {
         _accounts.erase(number);
     }
 
-    BaseAccount* find(int number)
+    IAccount* find(const int number)
     {
-        return &_accounts[number];
+        return _accounts[number];
     }
 
-    static bool transfer(BaseAccount* from, BaseAccount* to, double amount)
+    static bool transfer(IAccount* from, IAccount* to, const double amount)
     {
         if (amount <= 0)
         {

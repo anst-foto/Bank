@@ -10,4 +10,7 @@ public:
     
     virtual bool credit(double amount) = 0;
     virtual void debit(double amount) = 0;
+
+    virtual double getBalance() const = 0;
+    virtual int getNumber() const = 0;
 };
