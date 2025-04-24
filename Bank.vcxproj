@@ -133,8 +133,14 @@
     <ClInclude Include="AccountWithPassword.h" />
     <ClInclude Include="BaseAccount.h" />
     <ClInclude Include="Bank.h" />
+    <ClInclude Include="BaseLogger.h" />
+    <ClInclude Include="ConsoleInput.h" />
+    <ClInclude Include="ConsoleLogger.h" />
+    <ClInclude Include="EmptyLogger.h" />
+    <ClInclude Include="FileLogger.h" />
     <ClInclude Include="IAccount.h" />
     <ClInclude Include="IInput.h" />
+    <ClInclude Include="ILogger.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />

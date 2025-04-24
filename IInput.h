@@ -12,5 +12,5 @@ protected:
 public:
     virtual ~IInput() = default;
 
-    virtual string getInput() = 0;
+    virtual string getInput(const string& message) = 0;
 };
