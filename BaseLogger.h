@@ -21,6 +21,11 @@ protected:
 	}
 
 public:
+	~BaseLogger() override
+	{
+		delete _logger;
+	}
+
 	void log(const string& message) override {
 		if (_logger == nullptr) return;
 

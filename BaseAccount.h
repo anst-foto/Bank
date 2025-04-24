@@ -45,6 +45,11 @@ public:
         _logger = logger;
     }
 
+    ~BaseAccount() override
+    {
+        delete _logger;
+    }
+
     int getNumber() const override
     {
         if (_logger != nullptr)

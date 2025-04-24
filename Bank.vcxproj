@@ -130,6 +130,7 @@
     <ClCompile Include="Bank.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AccountBuilder.h" />
     <ClInclude Include="AccountWithPassword.h" />
     <ClInclude Include="BaseAccount.h" />
     <ClInclude Include="Bank.h" />

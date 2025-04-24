@@ -16,6 +16,13 @@ private:
 
 public:
     Bank() = default;
+    ~Bank()
+    {
+        for (const auto& item : _accounts)
+        {
+            delete item.second;
+        }
+    }
 
     void add(IAccount* account)
     {

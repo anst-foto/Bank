@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include "AccountBuilder.h"
 #include "BaseAccount.h"
 #include "IInput.h"
 
@@ -36,6 +37,12 @@ public:
         _baseAccount = new BaseAccount(number, balance, logger);
 
         _input = input;
+    }
+
+    ~AccountWithPassword() override
+    {
+        delete _baseAccount;
+        delete _input;
     }
 
     int getNumber() const override
