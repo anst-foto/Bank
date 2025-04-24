@@ -6,7 +6,7 @@
 
 using namespace std;
 
-using AccountList = map<int, Account>;
+using AccountList = map<int, BaseAccount>;
 
 class Bank
 {
@@ -14,11 +14,11 @@ private:
     AccountList _accounts;
 
 public:
-    Bank() {}
+    Bank() = default;
 
-    void add(Account& account)
+    void add(const BaseAccount& account)
     {
-        auto number = account.getNumber();
+        const auto number = account.getNumber();
         _accounts[number] = account;
     }
 
@@ -27,13 +27,18 @@ public:
         _accounts.erase(number);
     }
 
-    Account* find(int number)
+    BaseAccount* find(int number)
     {
         return &_accounts[number];
     }
 
-    static bool transfer(Account* from, Account* to, double amount)
+    static bool transfer(BaseAccount* from, BaseAccount* to, double amount)
     {
+        if (amount <= 0)
+        {
+            throw invalid_argument("amount is invalid");
+        }
+        
         const auto result = from->credit(amount);
         if (!result)
         {

@@ -130,8 +130,11 @@
     <ClCompile Include="Bank.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h" />
+    <ClInclude Include="AccountWithPassword.h" />
+    <ClInclude Include="BaseAccount.h" />
     <ClInclude Include="Bank.h" />
+    <ClInclude Include="IAccount.h" />
+    <ClInclude Include="IInput.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
